@@ -162,9 +162,13 @@ sudo snap refresh
 sudo apt --fix-missing -y update
 sudo apt upgrade
 
+#Install Nvidia Drivers and force OS to use GPU
+sudo apt install nvidia-driver-525
+sudo prime-select nvidia
+
 #Exit logging terminal state
 exit
 
-#Exit terminal after script is finished
+#Exit & Reboot for Nvidia Driver
 exit
 
