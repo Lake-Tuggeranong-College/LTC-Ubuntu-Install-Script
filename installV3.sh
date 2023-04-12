@@ -147,11 +147,14 @@ cd
 
 su -l administrator
 
+#Cleanup downloads from internet
+
 #Check all packages again
 sudo apt update && sudo apt upgrade
 sudo apt autoremove
 sudo snap refresh
 sudo apt --fix-missing -y update
+sudo apt upgrade
 
 #Exit logging terminal state
 exit
