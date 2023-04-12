@@ -6,11 +6,9 @@
 # Get PC number Via host name or user input, name logfile after pc nummber
 
 # NOTES:
-# Godot has updated 4.0 (We prob need to stay on 3.5.1 due to the fact that the scirpting language is not backwards compatable and Ryan has not updated tutorials yet)
 # Snaps are stored in /var/lib/snapd/desktop/applications
 # To list all users - awk -F: '{ print $1 }' /etc/passwd
-# Cannot create 'admin' user in Ubuntu because it is already used, so offical user is now administrator
-# Before starting script, log into each user to create their home directory
+# Admin user is called tigerteam
 # PC name should be "6118-PCNUMBER"
 
 
@@ -48,8 +46,8 @@ sudo apt install -y ostinato
 sudo apt install -y virtualbox
 sudo apt install -y nmap
 sudo apt install -y gns3-gui gns3-server
+sudo apt install -y godot3
 sudo snap install cirkit-designer
-sudo snap install gd-godot-engine-snapcraft
 sudo snap install code --classic
 sudo snap install vlc
 sudo snap install arduino
