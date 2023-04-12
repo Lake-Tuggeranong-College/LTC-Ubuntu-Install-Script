@@ -25,6 +25,7 @@ script screen.log
 sudo apt update && sudo apt upgrade
 sudo apt autoremove
 sudo snap refresh
+sudo apt --fix-missing -y update
 
 #Add Users
 sudo useradd -p $(openssl passwd -1 student) gamedev
@@ -36,9 +37,6 @@ usermod -aG sudo cisco
 
 #Install Apps
 sudo add-apt-repository -y ppa:gns3/ppa
-sudo apt -y update
-sudo apt --fix-missing -y update
-sudo apt -y upgrade
 sudo apt install -y git
 sudo apt install -y putty
 sudo apt install -y putty-tools
@@ -141,6 +139,12 @@ su -l cisco
 cd 
 
 su -l administrator
+
+#Check all packages again
+sudo apt update && sudo apt upgrade
+sudo apt autoremove
+sudo snap refresh
+sudo apt --fix-missing -y update
 
 #Exit logging terminal state
 exit
