@@ -13,6 +13,7 @@
 # Admin user is called tigerteam
 # PC name should be "6118-PCNUMBER"
 # Cannot create desktop/taskbar shortcuts that are launchable by default because Dbus cannot launch without display
+#Install VNC
 
 
 #! /bin/bash
@@ -85,53 +86,56 @@ sudo apt install -y ./3zNcdQ5.deb
 	#GameDev
 		#Github
 		sudo cp /usr/share/applications/github-desktop.desktop /home/gamedev/Desktop
-		chmod a+x /home/gamedev/Desktop/github-desktop.desktop
+		sudo chmod a+x /home/gamedev/Desktop/github-desktop.desktop
 		#Chrome
 		sudo cp /usr/share/applications/google-chrome.desktop /home/gamedev/Desktop
-		chmod a+x /home/gamedev/Desktop/google-chrome.desktop
+		sudo chmod a+x /home/gamedev/Desktop/google-chrome.desktop
 		#Blender (May not need since Y11 never do 3D, may change for a paint program)
 		sudo cp /usr/share/applications/blender.deskop /home/gamedev/Desktop
-		chmod a+x /home/gamedev/Desktop/blender.desktop
+		sudo chmod a+x /home/gamedev/Desktop/blender.desktop
 		#Godot
 		sudo cp /var/lib/snapd/desktop/applications/gd-godot-engine-snapcraft_gd-godot-engine-snapcraft.desktop /home/gamedev/Desktop
-		chmod a+x /home/gamedev/Desktop/gd-godot-engine-snapcraft_gd-godot-engine-snapcraft.desktop
+		sudo chmod a+x /home/gamedev/Desktop/gd-godot-engine-snapcraft_gd-godot-engine-snapcraft.desktop
 		#VS Code
 		sudo cp /var/lib/snapd/desktop/applications/code_code.desktop /home/gamedev/Desktop
-		chmod a+x /home/gamedev/Desktop/code_code.desktop
+		sudo chmod a+x /home/gamedev/Desktop/code_code.desktop
 
 	#Robo
 		#Github
 		sudo cp /usr/share/applications/github-desktop.desktop /home/robotics/Desktop
-		chmod a+x /home/robotics/Desktop/github-desktop.desktop
+		sudo chmod a+x /home/robotics/Desktop/github-desktop.desktop
 		#Chrome
 		sudo cp /usr/share/applications/google-chrome.deskop /home/robotics/Desktop
-		chmod a+x /home/robotics/Desktop/google-chrome.desktop
+		sudo chmod a+x /home/robotics/Desktop/google-chrome.desktop
 		#VS Code
 		sudo cp /var/lib/snapd/desktop/applications/code_code.desktop /home/robotics/Desktop
-		chmod a+x /home/robotics/Desktop/code_code.desktop
+		sudo chmod a+x /home/robotics/Desktop/code_code.desktop
 		#Arduino
 		sudo cp /var/lib/snapd/desktop/applications/arduino_arduino.desktop /home/robotics/Desktop
-		chmod a+x /home/robotics/Desktop/arduino_arduino.desktop
+		sudo chmod a+x /home/robotics/Desktop/arduino_arduino.desktop
 		#Cirkit Designer
 		sudo cp /var/lib/snapd/desktop/applications/cirkit-designer_cirkit-designer.desktop /home/robotics/Desktop
-		chmod a+x /home/robotics/Desktop/cirkit-designer_cirkit-designer.desktop
+		sudo chmod a+x /home/robotics/Desktop/cirkit-designer_cirkit-designer.desktop
 
 	#CISCO
 		#Virtual Box
 		sudo cp /usr/share/applications/virtualbox.desktop /home/cisco/Desktop
-		chmod a+x /home/cisco/Desktop/virtualbox.desktop
+		sudo chmod a+x /home/cisco/Desktop/virtualbox.desktop
 		#GNS3
 		sudo cp /usr/share/applications/gns3.desktop /home/cisco/Desktop
-		chmod a+x /home/cisco/Desktop/gns3.desktop
+		sudo chmod a+x /home/cisco/Desktop/gns3.desktop
 		#Wireshark
 		sudo cp /usr/share/applications/org.wireshark.Wireshark.desktop /home/cisco/Desktop
-		chmod a+x /home/cisco/Desktop/org.wireshark.Wireshark.desktop
+		sudo chmod a+x /home/cisco/Desktop/org.wireshark.Wireshark.desktop
 		#Google Chrome
 		sudo cp /usr/share/applications/google-chrome.desktop /home/cisco/Desktop
-		chmod a+x /home/cisco/Desktop/google-chrome.desktop
+		sudo chmod a+x /home/cisco/Desktop/google-chrome.desktop
 		#PuttY
 		sudo cp /usr/share/applications/putty.desktop /home/cisco/Desktop
-		chmod a+x /home/cisco/Desktop/putty.desktop
+		sudo chmod a+x /home/cisco/Desktop/putty.desktop
+		#Packet Tracer
+		sudo cp /opt/pt/packettracer /home/cisco/Desktop
+		sudo chmod a+x /home/cisco/Desktop/packettracer
 
 #Import VM images using VboxManage on 'cisco' user
 su -l cisco
