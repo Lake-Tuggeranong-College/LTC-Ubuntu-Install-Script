@@ -66,8 +66,10 @@ wget https://github.com/shiftkey/desktop/releases/download/release-3.2.0-linux1/
 sudo apt install ./GitHubDesktop-linux-3.2.0-linux1.deb 
 #Download Packet Tracer
 wget https://bit.ly/3zNcdQ5
+#Add .deb to the end of install file
+mv ./3zNcdQ5 ./3zNcdQ5.deb
 #Install Packet Tracer
-sudo dpkg -i ./3zNcdQ5
+sudo apt install -y ./3zNcdQ5.deb
 
 #Create Desktop shortcuts 
 
