@@ -61,6 +61,10 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 wget https://github.com/shiftkey/desktop/releases/download/release-3.2.0-linux1/GitHubDesktop-linux-3.2.0-linux1.deb 
 #Install Github Desktop
 sudo apt install ./GitHubDesktop-linux-3.2.0-linux1.deb 
+#Download Packet Tracer
+wget 
+#Install Packet Tracer
+sudo apt install ./CiscoPacketTracer_821_Ubuntu_64bit.deb
 
 #Create Desktop shortcuts 
 
