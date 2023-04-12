@@ -1,9 +1,6 @@
 # TODO:
 # Make Desktop Shortcuts -> https://www.linuxfordevices.com/tutorials/ubuntu/create-desktop-shortcuts-using-terminal & https://askubuntu.com/questions/1218954/desktop-files-allow-launching-set-this-via-cli
-# Download VM images?? Done did not got rasp pi one
-	# How to auto-configure virtualbox with these images?
-	# Not possible, need to manually add all images
-# Fix Desktop shortcut creation (Looks like it does not make a home directory???)
+# Automatically add VM's to Virtualbox
 # Fix givng robo acc perms for USB/TTY (usergroup dialout does not exist)
 # All apps need to avaliable on application menu
 # Get PC number Via host name or user input, name logfile after pc nummber
