@@ -4,6 +4,7 @@
 # Fix givng robo acc perms for USB/TTY (usergroup dialout does not exist)
 # All apps need to avaliable on application menu
 # Get PC number Via host name or user input, name logfile after pc nummber
+# Make Desktop Folder in /etc/skel and move shortcuts into folder
 
 # NOTES:
 # Snaps are stored in /var/lib/snapd/desktop/applications
@@ -22,9 +23,9 @@ sudo snap refresh
 sudo apt --fix-missing -y update
 
 #Add Users
-sudo useradd -p $(openssl passwd -1 student) gamedev
-sudo useradd -p $(openssl passwd -1 student) robotics
-sudo useradd -p $(openssl passwd -1 student) cisco
+sudo useradd -m -p $(openssl passwd -1 student) gamedev
+sudo useradd -m -p $(openssl passwd -1 student) robotics
+sudo useradd -m -p $(openssl passwd -1 student) cisco
 
 #Put all users into sudo group
 usermod -aG sudo gamedev
