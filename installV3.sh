@@ -39,6 +39,7 @@ sudo add-apt-repository -y ppa:gns3/ppa
 sudo apt -y update
 sudo apt --fix-missing -y update
 sudo apt -y upgrade
+sudo apt install -y git
 sudo apt install -y putty
 sudo apt install -y putty-tools
 sudo apt install -y blender
