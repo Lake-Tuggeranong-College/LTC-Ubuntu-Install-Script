@@ -142,8 +142,10 @@ sudo apt install -y ./3zNcdQ5.deb
 
 #Import VM images using VboxManage on 'cisco' user
 su -l cisco
-cd 
-
+cd Downloads
+vboxmanage import Raspberry_Pi_OS.ova
+vboxmanage import Take-Home_CSC_Challenges.ova
+vboxmanage import Take-Home_CSC_Kali.ova
 su -l administrator
 
 #Cleanup downloads from internet
