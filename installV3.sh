@@ -33,10 +33,10 @@ usermod -aG sudo gamedev
 usermod -aG sudo robotics
 usermod -aG sudo cisco
 
-	#Grant Robo account perms to USB/TTY ports
-	sudo usermod -a -G dialout robotics
+#Grant Robo account perms to USB/TTY ports
+sudo usermod -a -G dialout robotics
 
-#Install Apps
+#Install Various Apps
 sudo add-apt-repository -y ppa:gns3/ppa
 sudo apt install -y git
 sudo apt install -y putty
@@ -48,24 +48,26 @@ sudo apt install -y ostinato
 sudo apt install -y virtualbox
 sudo apt install -y nmap
 sudo apt install -y gns3-gui gns3-server
-#Get and install VMware VIX (Needed to use GNS3)
-wget https://download3.vmware.com/software/player/file/VMware-VIX-1.17.0-6661328.x86_64.bundle
-sudo chmod a+x VMware-VIX-1.17.0-6661328.x86_64.bundle
-sudo ./VMware-VIX-1.17.0-6661328.x86_64.bundle
 sudo snap install cirkit-designer
 sudo snap install gd-godot-engine-snapcraft
 sudo snap install code --classic
 sudo snap install vlc
 sudo snap install arduino
 sudo snap install krita
-#Download Chrome from the internet
+
+#Get and install VMware VIX (Needed to use GNS3)
+wget https://download3.vmware.com/software/player/file/VMware-VIX-1.17.0-6661328.x86_64.bundle
+sudo chmod a+x VMware-VIX-1.17.0-6661328.x86_64.bundle
+sudo ./VMware-VIX-1.17.0-6661328.x86_64.bundle
+
+#Download & Install Chrome from the internet
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
-# Install Chrome
 sudo dpkg -i google-chrome-stable_current_amd64.deb 
-#Download Github Desktop from the internet
+
+#Download & Install Github Desktop from the internet
 wget https://github.com/shiftkey/desktop/releases/download/release-3.2.0-linux1/GitHubDesktop-linux-3.2.0-linux1.deb 
-#Install Github Desktop
 sudo apt install ./GitHubDesktop-linux-3.2.0-linux1.deb 
+
 #Download Packet Tracer
 wget https://bit.ly/3zNcdQ5
 #Add .deb to the end of install file
@@ -149,6 +151,10 @@ vboxmanage import Take-Home_CSC_Kali.ova
 su -l administrator
 
 #Cleanup downloads from internet
+sudo rm Chrome
+sudo rm Cisco packet 
+sudo rm github desktop
+sudo rm vmware plugin
 
 #Check all packages again
 sudo apt update && sudo apt upgrade
