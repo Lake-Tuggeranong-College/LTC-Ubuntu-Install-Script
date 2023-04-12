@@ -65,9 +65,9 @@ wget https://github.com/shiftkey/desktop/releases/download/release-3.2.0-linux1/
 #Install Github Desktop
 sudo apt install ./GitHubDesktop-linux-3.2.0-linux1.deb 
 #Download Packet Tracer
-wget 
+wget https://bit.ly/3zNcdQ5
 #Install Packet Tracer
-sudo apt install ./CiscoPacketTracer_821_Ubuntu_64bit.deb
+sudo dpkg -i ./3zNcdQ5
 
 #Create Desktop shortcuts 
 
