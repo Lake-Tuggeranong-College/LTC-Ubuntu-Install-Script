@@ -47,6 +47,10 @@ sudo apt install -y ostinato
 sudo apt install -y virtualbox
 sudo apt install -y nmap
 sudo apt install -y gns3-gui gns3-server
+#Get and install VMware VIX (Needed to use GNS3)
+wget https://download3.vmware.com/software/player/file/VMware-VIX-1.17.0-6661328.x86_64.bundle
+sudo chmod a+x VMware-VIX-1.17.0-6661328.x86_64.bundle
+sudo ./VMware-VIX-1.17.0-6661328.x86_64.bundle
 sudo snap install cirkit-designer
 sudo snap install gd-godot-engine-snapcraft
 sudo snap install code --classic
