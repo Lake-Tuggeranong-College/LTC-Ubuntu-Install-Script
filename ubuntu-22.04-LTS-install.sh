@@ -25,9 +25,9 @@ sudo snap refresh
 sudo apt --fix-missing -y update
 
 #Add Users
-sudo useradd -m -p $(openssl passwd -1 student) gamedev
-sudo useradd -m -p $(openssl passwd -1 student) robotics
-sudo useradd -m -p $(openssl passwd -1 student) cisco
+sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash gamedev
+sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash robotics
+sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash cisco
 
 #Put all users into sudo group
 usermod -aG sudo gamedev
