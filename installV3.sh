@@ -1,5 +1,4 @@
 # TODO:
-# Add a paint program (Krita or GIMP?)
 # Make Desktop Shortcuts -> https://www.linuxfordevices.com/tutorials/ubuntu/create-desktop-shortcuts-using-terminal & https://askubuntu.com/questions/1218954/desktop-files-allow-launching-set-this-via-cli
 # Download VM images?? Done did not got rasp pi one
 	# How to auto-configure virtualbox with these images?
