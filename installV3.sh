@@ -27,9 +27,14 @@ sudo apt --fix-missing -y update
 sudo useradd -p $(openssl passwd -1 student) gamedev
 sudo useradd -p $(openssl passwd -1 student) robotics
 sudo useradd -p $(openssl passwd -1 student) cisco
+
+#Put all users into sudo group
 usermod -aG sudo gamedev
 usermod -aG sudo robotics
 usermod -aG sudo cisco
+
+	#Grant Robo account perms to USB/TTY ports
+	sudo usermod -a -G dialout robotics
 
 #Install Apps
 sudo add-apt-repository -y ppa:gns3/ppa
@@ -136,9 +141,6 @@ sudo apt install -y ./3zNcdQ5.deb
 	cp /usr/share/applications/putty.deskop /home/cisco/Desktop
 	gio set /home/cisco/Desktop/putty.deskop metadata::trusted true
 	chmod a+x /home/cisco/Desktop/putty.deskop
-
-#Grant Robo account perms to USB/TTY ports
-sudo usermod -a -G dialout robotics
 
 #Import VM images using VboxManage on 'cisco' user
 su -l cisco
