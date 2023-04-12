@@ -74,73 +74,71 @@ mv ./3zNcdQ5 ./3zNcdQ5.deb
 sudo apt install -y ./3zNcdQ5.deb
 
 #Create Desktop shortcuts 
+	#GameDev
+		#Github
+		cp /usr/share/applications/github-desktop.desktop /home/gamedev/Desktop
+		gio set /home/gamedev/Desktop/github-desktop.desktop metadata::trusted true
+		chmod a+x /home/gamedev/Desktop/github-desktop.desktop
+		#Chrome
+		cp /usr/share/applications/google-chrome.desktop /home/gamedev/Desktop
+		gio set /home/gamedev/Desktop/google-chrome.desktop metadata::trusted true
+		chmod a+x /home/gamedev/Desktop/google-chrome.desktop
+		#Blender (May not need since Y11 never do 3D, may change for a paint program)
+		cp /usr/share/applications/blender.deskop /home/gamedev/Desktop
+		gio set /home/gamedev/Desktop/blender.desktop metadata::trusted true
+		chmod a+x /home/gamedev/Desktop/blender.desktop
+		#Godot
+		cp /var/lib/snapd/desktop/applications/gd-godot-engine-snapcraft_gd-godot-engine-snapcraft.desktop /home/gamedev/Desktop
+		gio set /home/gamedev/Desktop/gd-godot-engine-snapcraft_gd-godot-engine-snapcraft.desktop metadata::trusted true
+		chmod a+x /home/gamedev/Desktop/gd-godot-engine-snapcraft_gd-godot-engine-snapcraft.desktop
+		#VS Code
+		cp /var/lib/snapd/desktop/applications/code_code.desktop /home/gamedev/Desktop
+		gio set /home/gamedev/Desktop/code_code.desktop metadata::trusted true
+		chmod a+x /home/gamedev/Desktop/code_code.desktop
 
+	#Robo
+		#Github
+		cp /usr/share/applications/github-desktop.desktop /home/robotics/Desktop
+		gio set /home/robotics/Desktop/github-desktop.desktop metadata::trusted true
+		chmod a+x /home/robotics/Desktop/github-desktop.desktop
+		#Chrome
+		cp /usr/share/applications/google-chrome.deskop /home/robotics/Desktop
+		gio set /home/robotics/Desktop/google-chrome.desktop metadata::trusted true
+		chmod a+x /home/robotics/Desktop/google-chrome.desktop
+		#VS Code
+		cp /var/lib/snapd/desktop/applications/code_code.desktop /home/robotics/Desktop
+		gio set /home/robotics/Desktop/code_code.desktop metadata::trusted true
+		chmod a+x /home/robotics/Desktop/code_code.desktop
+		#Arduino
+		cp /var/lib/snapd/desktop/applications/arduino_arduino.desktop /home/robotics/Desktop
+		gio set /home/robotics/Desktop/arduino_arduino.desktop metadata::trusted true
+		chmod a+x /home/robotics/Desktop/arduino_arduino.desktop
+		#Cirkit Designer
+		cp /var/lib/snapd/desktop/applications/cirkit-designer_cirkit-designer.desktop /home/robotics/Desktop
+		gio set /home/robotics/Desktop/cirkit-designer_cirkit-designer.desktop metadata::trusted true
+		chmod a+x /home/robotics/Desktop/cirkit-designer_cirkit-designer.desktop
 
-#GameDev
-	#Github
-	cp /usr/share/applications/github-desktop.deskop /home/gamedev/Desktop
-	gio set /home/gamedev/Desktop/github-desktop.deskop metadata::trusted true
-	chmod a+x /home/gamedev/Desktop/github-desktop.deskop
-	#Chrome
-	cp /usr/share/applications/google-chrome.deskop /home/gamedev/Desktop
-	gio set /home/gamedev/Desktop/google-chrome.deskop metadata::trusted true
-	chmod a+x /home/gamedev/Desktop/google-chrome.deskop
-	#Blender (May not need since Y11 never do 3D, may change for a paint program)
-	cp /usr/share/applications/blender.deskop /home/gamedev/Desktop
-	gio set /home/gamedev/Desktop/blender.deskop metadata::trusted true
-	chmod a+x /home/gamedev/Desktop/blender.deskop
-	#Godot
-	cp /var/lib/snapd/desktop/applications/gd-godot-engine-snapcraft_gd-godot-engine-snapcraft.desktop /home/gamedev/Desktop
-	gio set /home/gamedev/Desktop/gd-godot-engine-snapcraft_gd-godot-engine-snapcraft.desktop metadata::trusted true
-	chmod a+x /home/gamedev/Desktop/gd-godot-engine-snapcraft_gd-godot-engine-snapcraft.desktop
-	#VS Code
-	cp /var/lib/snapd/desktop/applications/code_code.desktop /home/gamedev/Desktop
-	gio set /home/gamedev/Desktop/code_code.desktop metadata::trusted true
-	chmod a+x /home/gamedev/Desktop/code_code.desktop
-
-#Robo
-	#Github
-	cp /usr/share/applications/github-desktop.deskop /home/robotics/Desktop
-	gio set /home/robotics/Desktop/github-desktop.deskop metadata::trusted true
-	chmod a+x /home/robotics/Desktop/github-desktop.deskop
-	#Chrome
-	cp /usr/share/applications/google-chrome.deskop /home/robotics/Desktop
-	gio set /home/robotics/Desktop/google-chrome.deskop metadata::trusted true
-	chmod a+x /home/robotics/Desktop/google-chrome.deskop
-	#VS Code
-	cp /var/lib/snapd/desktop/applications/code_code.desktop /home/robotics/Desktop
-	gio set /home/robotics/Desktop/code_code.desktop metadata::trusted true
-	chmod a+x /home/robotics/Desktop/code_code.desktop
-	#Arduino
-	cp /var/lib/snapd/desktop/applications/arduino_arduino.desktop /home/robotics/Desktop
-	gio set /home/robotics/Desktop/arduino_arduino.desktop metadata::trusted true
-	chmod a+x /home/robotics/Desktop/arduino_arduino.desktop
-	#Cirkit Designer
-	cp /var/lib/snapd/desktop/applications/cirkit-designer_cirkit-designer.desktop /home/robotics/Desktop
-	gio set /home/robotics/Desktop/cirkit-designer_cirkit-designer.desktop metadata::trusted true
-	chmod a+x /home/robotics/Desktop/cirkit-designer_cirkit-designer.desktop
-
-#CISCO #Need to install packet tracer manually, add shortcut to desktop, figure out how to put in application menu
-	#Virtual Box
-	cp /usr/share/applications/virtualbox.deskop /home/cisco/Desktop
-	gio set /home/cisco/Desktop/virtualbox.deskop metadata::trusted true
-	chmod a+x /home/cisco/Desktop/virtualbox.deskop
-	#GNS3
-	cp /usr/share/applications/gns3.deskop /home/cisco/Desktop
-	gio set /home/cisco/Desktop/gns3.deskop metadata::trusted true
-	chmod a+x /home/cisco/Desktop/gns3.deskop
-	#Wireshark
-	cp /usr/share/applications/org.wireshark.Wireshark.deskop /home/cisco/Desktop
-	gio set /home/cisco/Desktop/org.wireshark.Wireshark.deskop metadata::trusted true
-	chmod a+x /home/cisco/Desktop/org.wireshark.Wireshark.deskop
-	#Google Chrome
-	cp /usr/share/applications/google-chrome.deskop /home/cisco/Desktop
-	gio set /home/cisco/Desktop/google-chrome.deskop metadata::trusted true
-	chmod a+x /home/cisco/Desktop/google-chrome.deskop
-	#PuttY
-	cp /usr/share/applications/putty.deskop /home/cisco/Desktop
-	gio set /home/cisco/Desktop/putty.deskop metadata::trusted true
-	chmod a+x /home/cisco/Desktop/putty.deskop
+	#CISCO
+		#Virtual Box
+		cp /usr/share/applications/virtualbox.desktop /home/cisco/Desktop
+		gio set /home/cisco/Desktop/virtualbox.desktop metadata::trusted true
+		chmod a+x /home/cisco/Desktop/virtualbox.desktop
+		#GNS3
+		cp /usr/share/applications/gns3.desktop /home/cisco/Desktop
+		gio set /home/cisco/Desktop/gns3.desktop metadata::trusted true
+		chmod a+x /home/cisco/Desktop/gns3.desktop
+		#Wireshark
+		cp /usr/share/applications/org.wireshark.Wireshark.desktop /home/cisco/Desktop
+		gio set /home/cisco/Desktop/org.wireshark.Wireshark.desktop metadata::trusted true
+		chmod a+x /home/cisco/Desktop/org.wireshark.Wireshark.desktop
+		#Google Chrome
+		cp /usr/share/applications/google-chrome.desktop /home/cisco/Desktop
+		gio set /home/cisco/Desktop/google-chrome.desktop metadata::trusted true
+		chmod a+x /home/cisco/Desktop/google-chrome.desktop
+		#PuttY
+		cp /usr/share/applications/putty.desktop /home/cisco/Desktop
+		gio set /home/cisco/Desktop/putty.desktop metadata::trusted true
+		chmod a+x /home/cisco/Desktop/putty.desktop
 
 #Import VM images using VboxManage on 'cisco' user
 su -l cisco
