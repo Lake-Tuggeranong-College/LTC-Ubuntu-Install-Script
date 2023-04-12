@@ -80,6 +80,9 @@ sudo mv ./3zNcdQ5 ./3zNcdQ5.deb
 #Install Packet Tracer
 sudo apt install -y ./3zNcdQ5.deb
 
+#Download & Install VNC Viewer
+sudo wget need shorten link from google drive
+sudo apt install -y ./
 
 
 #Create Desktop shortcuts 
