@@ -5,6 +5,7 @@
 # All apps need to avaliable on application menu
 # Get PC number Via host name or user input, name logfile after pc nummber
 # Make Desktop Folder in /etc/skel and move shortcuts into folder
+# Created user accounts does not show username@hostname on terminal, also does not show current active directory
 
 # NOTES:
 # Snaps are stored in /var/lib/snapd/desktop/applications
