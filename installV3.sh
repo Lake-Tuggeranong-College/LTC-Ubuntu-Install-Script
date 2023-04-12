@@ -22,6 +22,9 @@
 
 #Initialize logging terminal output and commands used
 script screen.log
+sudo apt update && sudo apt upgrade
+sudo apt autoremove
+sudo snap refresh
 
 #Add Users
 sudo useradd -p $(openssl passwd -1 student) gamedev
