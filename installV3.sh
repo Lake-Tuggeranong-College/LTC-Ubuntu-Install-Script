@@ -12,10 +12,10 @@
 # To list all users - awk -F: '{ print $1 }' /etc/passwd
 # Admin user is called tigerteam
 # PC name should be "6118-PCNUMBER"
-# Cannot create desktop/taskbar shortcuts because Dbus cannot launch without display
+# Cannot create desktop/taskbar shortcuts that are launchable by default because Dbus cannot launch without display
 
 
-#! /bin/sh
+#! /bin/bash
 
 #Initialize logging terminal output and commands used
 script screen.log
