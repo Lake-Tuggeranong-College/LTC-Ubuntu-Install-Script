@@ -13,7 +13,12 @@
 # Admin user is called tigerteam
 # PC name should be "6118-PCNUMBER"
 # Cannot create desktop/taskbar shortcuts that are launchable by default because Dbus cannot launch without display
-#Install VNC
+# Install VNC
+# Install IPconfig package (name unknown)
+# Computers have NVME ssd's, Laptops only have one HDD
+# We should rollout image using PxE server. Using PC 14
+# Clear TPM on all laptops and computers after new OS installed
+# Priority for display ports on GPU is, DVI, HDMI, DP. Primary display (the one of the left) should be DVI or HDMI
 
 
 #! /bin/bash
