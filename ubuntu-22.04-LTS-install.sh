@@ -49,6 +49,7 @@ sudo usermod -a -G dialout robotics
 
 #Install Various Apps
 sudo add-apt-repository -y ppa:gns3/ppa
+sudo apt install -y net-tools
 sudo apt install -y git
 sudo apt install -y putty
 sudo apt install -y putty-tools
