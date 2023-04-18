@@ -8,6 +8,7 @@
 # Created user accounts does not show username@hostname on terminal, also does not show current active directory
 
 # NOTES:
+# Opened software centre to break "cannot lock cache" error at the first sudo apt upgrade
 # Snaps are stored in /var/lib/snapd/desktop/applications
 # To list all users - awk -F: '{ print $1 }' /etc/passwd
 # Admin user is called tigerteam
