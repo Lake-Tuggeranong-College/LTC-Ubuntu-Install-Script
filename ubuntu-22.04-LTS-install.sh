@@ -26,7 +26,7 @@
 #! /bin/bash
 
 #Initialize logging terminal output and commands used
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 sudo apt autoremove
 sudo snap refresh
 sudo apt --fix-missing -y update
