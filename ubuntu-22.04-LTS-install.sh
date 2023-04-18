@@ -25,7 +25,6 @@
 #! /bin/bash
 
 #Initialize logging terminal output and commands used
-script screen.log
 sudo apt update && sudo apt upgrade
 sudo apt autoremove
 sudo snap refresh
@@ -171,9 +170,6 @@ sudo apt upgrade
 #Install Nvidia Drivers and force OS to use GPU
 sudo apt install nvidia-driver-525
 sudo prime-select nvidia
-
-#Exit logging terminal state
-exit
 
 #Exit & Reboot for Nvidia Driver
 reboot
