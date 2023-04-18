@@ -19,6 +19,7 @@
 # We should rollout image using PxE server. Using PC 14
 # Clear TPM on all laptops and computers after new OS installed
 # Priority for display ports on GPU is, DVI, HDMI, DP. Primary display (the one of the left) should be DVI or HDMI
+# Enable remote desktop to allow management?
 
 
 #! /bin/bash
