@@ -5,7 +5,7 @@
 # All apps need to avaliable on application menu
 # Get PC number Via host name or user input, name logfile after pc nummber
 # Make Desktop Folder in /etc/skel and move shortcuts into folder
-# Created user accounts does not show username@hostname on terminal, also does not show current active directory
+
 
 # NOTES:
 # Maybe turn off screen timeout since it stops the script, revert the change after its all done?
@@ -15,8 +15,6 @@
 # Admin user is called tigerteam
 # PC name should be "6118-PCNUMBER"
 # Cannot create desktop/taskbar shortcuts that are launchable by default because Dbus cannot launch without display
-# Install VNC
-# Install IPconfig package (name unknown)
 # Computers have NVME ssd's, Laptops only have one HDD
 # We should rollout image using PxE server. Using PC 14
 # Clear TPM on all laptops and computers after new OS installed
@@ -89,8 +87,8 @@ sudo mv ./3zNcdQ5 ./3zNcdQ5.deb
 sudo apt install -y ./3zNcdQ5.deb
 
 #Download & Install VNC Viewer
-sudo wget need shorten link from google drive
-sudo apt install -y ./
+sudo wget https://downloads.realvnc.com/download/file/viewer.files/VNC-Viewer-7.1.0-Linux-x64.deb
+sudo apt install -y ./VNC-Viewer-7.1.0-Linux-x64.deb
 
 
 #Create Desktop shortcuts 
@@ -104,12 +102,18 @@ sudo apt install -y ./
 		#Blender (May not need since Y11 never do 3D, may change for a paint program)
 		sudo cp /usr/share/applications/blender.deskop /home/gamedev/Desktop
 		sudo chmod a+x /home/gamedev/Desktop/blender.desktop
+		#Gimp
+		sudo cp /usr/share/applications/gimp.deskop /home/gamedev/Desktop
+		sudo chmod a+x /home/gamedev/Desktop/gimp.desktop
 		#Godot
 		sudo cp /var/lib/snapd/desktop/applications/gd-godot-engine-snapcraft_gd-godot-engine-snapcraft.desktop /home/gamedev/Desktop
 		sudo chmod a+x /home/gamedev/Desktop/gd-godot-engine-snapcraft_gd-godot-engine-snapcraft.desktop
 		#VS Code
 		sudo cp /var/lib/snapd/desktop/applications/code_code.desktop /home/gamedev/Desktop
 		sudo chmod a+x /home/gamedev/Desktop/code_code.desktop
+		#Kirta
+		sudo cp /var/lib/snapd/desktop/applications/krita_krita.desktop /home/gamedev/Desktop
+		sudo chmod a+x /home/gamedev/Desktop/krita_krita.desktop
 
 	#Robo
 		#Github
@@ -151,6 +155,12 @@ sudo apt install -y ./
 #Import VM images using VboxManage on 'cisco' user
 su -l cisco
 cd Downloads
+sudo wget https://bit.ly/41qQCZO
+sudo mv ./41qQCZO ./Raspberry_Pi_OS.ova
+sudo wget https://bit.ly/3KTbmlM
+sudo mv ./3KTbmlM ./Take-Home_CSC_Challenges.ova
+sudo wget https://bit.ly/4402fJ5
+sudo mv ./4402fJ5 ./Take-Home_CSC_Kali.ova
 vboxmanage import Raspberry_Pi_OS.ova
 vboxmanage import Take-Home_CSC_Challenges.ova
 vboxmanage import Take-Home_CSC_Kali.ova
