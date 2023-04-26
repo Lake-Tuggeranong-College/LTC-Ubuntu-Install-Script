@@ -21,7 +21,6 @@
 # Priority for display ports on GPU is, DVI, HDMI, DP. Primary display (the one of the left) should be DVI or HDMI
 # Enable remote desktop to allow management?
 
-
 #! /bin/bash
 
 #Initialize logging terminal output and commands used
@@ -90,77 +89,17 @@ sudo apt install -y ./3zNcdQ5.deb
 sudo wget https://downloads.realvnc.com/download/file/viewer.files/VNC-Viewer-7.1.0-Linux-x64.deb
 sudo apt install -y ./VNC-Viewer-7.1.0-Linux-x64.deb
 
-
-#Create Desktop shortcuts 
-	#GameDev
-		#Github
-		sudo cp /usr/share/applications/github-desktop.desktop /home/gamedev/Desktop
-		sudo chmod a+x /home/gamedev/Desktop/github-desktop.desktop
-		#Chrome
-		sudo cp /usr/share/applications/google-chrome.desktop /home/gamedev/Desktop
-		sudo chmod a+x /home/gamedev/Desktop/google-chrome.desktop
-		#Blender (May not need since Y11 never do 3D, may change for a paint program)
-		sudo cp /usr/share/applications/blender.deskop /home/gamedev/Desktop
-		sudo chmod a+x /home/gamedev/Desktop/blender.desktop
-		#Gimp
-		sudo cp /usr/share/applications/gimp.deskop /home/gamedev/Desktop
-		sudo chmod a+x /home/gamedev/Desktop/gimp.desktop
-		#Godot
-		sudo cp /var/lib/snapd/desktop/applications/gd-godot-engine-snapcraft_gd-godot-engine-snapcraft.desktop /home/gamedev/Desktop
-		sudo chmod a+x /home/gamedev/Desktop/gd-godot-engine-snapcraft_gd-godot-engine-snapcraft.desktop
-		#VS Code
-		sudo cp /var/lib/snapd/desktop/applications/code_code.desktop /home/gamedev/Desktop
-		sudo chmod a+x /home/gamedev/Desktop/code_code.desktop
-		#Kirta
-		sudo cp /var/lib/snapd/desktop/applications/krita_krita.desktop /home/gamedev/Desktop
-		sudo chmod a+x /home/gamedev/Desktop/krita_krita.desktop
-
-	#Robo
-		#Github
-		sudo cp /usr/share/applications/github-desktop.desktop /home/robotics/Desktop
-		sudo chmod a+x /home/robotics/Desktop/github-desktop.desktop
-		#Chrome
-		sudo cp /usr/share/applications/google-chrome.deskop /home/robotics/Desktop
-		sudo chmod a+x /home/robotics/Desktop/google-chrome.desktop
-		#VS Code
-		sudo cp /var/lib/snapd/desktop/applications/code_code.desktop /home/robotics/Desktop
-		sudo chmod a+x /home/robotics/Desktop/code_code.desktop
-		#Arduino
-		sudo cp /var/lib/snapd/desktop/applications/arduino_arduino.desktop /home/robotics/Desktop
-		sudo chmod a+x /home/robotics/Desktop/arduino_arduino.desktop
-		#Cirkit Designer
-		sudo cp /var/lib/snapd/desktop/applications/cirkit-designer_cirkit-designer.desktop /home/robotics/Desktop
-		sudo chmod a+x /home/robotics/Desktop/cirkit-designer_cirkit-designer.desktop
-
-	#CISCO
-		#Virtual Box
-		sudo cp /usr/share/applications/virtualbox.desktop /home/cisco/Desktop
-		sudo chmod a+x /home/cisco/Desktop/virtualbox.desktop
-		#GNS3
-		sudo cp /usr/share/applications/gns3.desktop /home/cisco/Desktop
-		sudo chmod a+x /home/cisco/Desktop/gns3.desktop
-		#Wireshark
-		sudo cp /usr/share/applications/org.wireshark.Wireshark.desktop /home/cisco/Desktop
-		sudo chmod a+x /home/cisco/Desktop/org.wireshark.Wireshark.desktop
-		#Google Chrome
-		sudo cp /usr/share/applications/google-chrome.desktop /home/cisco/Desktop
-		sudo chmod a+x /home/cisco/Desktop/google-chrome.desktop
-		#PuttY
-		sudo cp /usr/share/applications/putty.desktop /home/cisco/Desktop
-		sudo chmod a+x /home/cisco/Desktop/putty.desktop
-		#Packet Tracer
-		sudo cp /opt/pt/packettracer /home/cisco/Desktop
-		sudo chmod a+x /home/cisco/Desktop/packettracer
-
 #Import VM images using VboxManage on 'cisco' user
 su -l cisco
 cd Downloads
+
 sudo wget https://bit.ly/41qQCZO
 sudo mv ./41qQCZO ./Raspberry_Pi_OS.ova
 sudo wget https://bit.ly/3KTbmlM
 sudo mv ./3KTbmlM ./Take-Home_CSC_Challenges.ova
 sudo wget https://bit.ly/4402fJ5
 sudo mv ./4402fJ5 ./Take-Home_CSC_Kali.ova
+
 vboxmanage import Raspberry_Pi_OS.ova
 vboxmanage import Take-Home_CSC_Challenges.ova
 vboxmanage import Take-Home_CSC_Kali.ova
@@ -185,4 +124,3 @@ sudo prime-select nvidia
 
 #Exit & Reboot for Nvidia Driver
 reboot
-
