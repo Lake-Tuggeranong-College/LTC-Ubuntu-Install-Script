@@ -1,25 +1,9 @@
 # TODO:
-# Make Desktop Shortcuts -> https://www.linuxfordevices.com/tutorials/ubuntu/create-desktop-shortcuts-using-terminal & https://askubuntu.com/questions/1218954/desktop-files-allow-launching-set-this-via-cli
-# Automatically add VM's to Virtualbox
 # Fix givng robo acc perms for USB/TTY (usergroup dialout does not exist)
 # All apps need to avaliable on application menu
-# Get PC number Via host name or user input, name logfile after pc nummber
-# Make Desktop Folder in /etc/skel and move shortcuts into folder
-
 
 # NOTES:
-# Maybe turn off screen timeout since it stops the script, revert the change after its all done?
-# Opened software centre to break "cannot lock cache" error at the first sudo apt upgrade
-# Snaps are stored in /var/lib/snapd/desktop/applications
-# To list all users - awk -F: '{ print $1 }' /etc/passwd
-# Admin user is called tigerteam
-# PC name should be "6118-PCNUMBER"
-# Cannot create desktop/taskbar shortcuts that are launchable by default because Dbus cannot launch without display
-# Computers have NVME ssd's, Laptops only have one HDD
-# We should rollout image using PxE server. Using PC 14
-# Clear TPM on all laptops and computers after new OS installed
-# Priority for display ports on GPU is, DVI, HDMI, DP. Primary display (the one of the left) should be DVI or HDMI
-# Enable remote desktop to allow management?
+# 
 
 #! /bin/bash
 
