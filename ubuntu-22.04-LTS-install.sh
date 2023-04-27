@@ -1,5 +1,4 @@
 # TODO:
-# Fix givng robo acc perms for USB/TTY (usergroup dialout does not exist)
 # All apps need to avaliable on application menu
 
 # NOTES:
@@ -7,14 +6,11 @@
 
 #! /bin/bash
 
-#Initialize logging terminal output and commands used
+# Update and upgrade packages from apt and snap
 sudo apt update && sudo apt upgrade -y
 sudo apt autoremove
 sudo snap refresh
 sudo apt --fix-missing -y update
-
-# Make User Desktop Folder
-sudo mkdir /etc/skell/Desktop
 
 #Add Users
 sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash gamedev
