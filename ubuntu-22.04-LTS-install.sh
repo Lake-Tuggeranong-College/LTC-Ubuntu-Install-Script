@@ -19,9 +19,14 @@ sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash robotics
 sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash cisco
 
 #Put all users into sudo group
-usermod -aG sudo gamedev
-usermod -aG sudo robotics
-usermod -aG sudo cisco
+sudo usermod -aG sudo gamedev
+sudo usermod -aG sudo robotics
+sudo usermod -aG sudo cisco
+
+#Change User Directory to HDD
+sudo usermod -d *INSERT DIRECTORY HERE* gamedev
+sudo usermod -d *INSERT DIRECTORY HERE* robotics
+sudo usermod -d *INSERT DIRECTORY HERE* cisco
 
 #Grant Robo account perms to USB/TTY ports
 sudo usermod -a -G dialout robotics
