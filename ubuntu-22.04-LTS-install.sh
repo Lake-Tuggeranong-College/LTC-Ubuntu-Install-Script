@@ -1,15 +1,17 @@
 # TODO:
 # All apps need to avaliable on application menu
+# Find a way to automate VMware VIX install (Shows a popup that the user needs to click through)
 
 # NOTES:
-# 
+# Test of Script on 23/5: Could not test automount of drives due to incorect config with VM (Will test at a later date), Some install lines were missing the -y flag
+# Do we Still need netowrking tools?
 
 #! /bin/bash
 
 # Update and upgrade packages from apt and snap
 sudo apt update
 sudo apt upgrade -y
-sudo apt autoremove
+sudo apt autoremove -y
 sudo snap refresh
 sudo apt --fix-missing -y update
 
@@ -103,15 +105,15 @@ sudo rm GitHubDesktop-linux-3.2.0-linux1.deb
 sudo rm VMware-VIX-1.17.0-6661328.x86_64.bundle
 
 #Check all packages again
-sudo apt update
+sudo apt update -y
 sudo apt upgrade -y
-sudo apt autoremove
+sudo apt autoremove -y
 sudo snap refresh
 sudo apt --fix-missing -y update
-sudo apt upgrade
+sudo apt upgrade -y
 
 #Install Nvidia Drivers and force OS to use GPU
-sudo apt install nvidia-driver-525
+sudo apt install nvidia-driver-525 -y
 sudo prime-select nvidia
 
 #Exit & Reboot for Nvidia Driver
