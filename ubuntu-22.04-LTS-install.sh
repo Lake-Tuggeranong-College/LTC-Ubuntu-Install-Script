@@ -4,7 +4,7 @@
 
 # NOTES:
 # Test of Script on 23/5: Could not test automount of drives due to incorect config with VM (Will test at a later date), Some install lines were missing the -y flag
-# Do we Still need netowrking tools?
+# Test of Scipt on 25/5: Mkfs came up with comfermation popup, may have fixed it with ereaseing it first
 
 #! /bin/bash
 
@@ -25,6 +25,11 @@ sudo usermod -aG sudo gamedev
 sudo usermod -aG sudo robotics
 sudo usermod -aG sudo cisco
 
+#Securely erase the ohter HDDs
+sudo shred -vfz -n1 /dev/sda
+sudo shred -vfz -n1 /dev/sdb
+
+#Setup one of the HDD to use as the location of the user home folders
 sudo mkfs.ext4 /dev/sda
 sudo mkdir /mnt/homeFolders
 sdaUUID=$(sudo blkid -s UUID -o value /dev/sda1)
@@ -55,7 +60,7 @@ sudo apt install -y ostinato
 sudo apt install -y virtualbox
 sudo apt install -y nmap
 sudo apt install -y gns3-gui gns3-server
-sudo apt install -y godot3
+sudo snap install gd-godot-engine-snapcraft
 sudo snap install cirkit-designer
 sudo snap install code --classic
 sudo snap install vlc
