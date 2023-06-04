@@ -91,17 +91,7 @@ sudo apt install -y ./3zNcdQ5.deb
 sudo wget https://downloads.realvnc.com/download/file/viewer.files/VNC-Viewer-7.1.0-Linux-x64.deb
 sudo apt install -y ./VNC-Viewer-7.1.0-Linux-x64.deb
 
-runuser -l cisco -c "
-wget https://bit.ly/41qQCZO;
-mv ./41qQCZO ./Raspberry_Pi_OS.ova;
-wget https://bit.ly/3KTbmlM;
-mv ./3KTbmlM ./Take-Home_CSC_Challenges.ova;
-wget https://bit.ly/4402fJ5;
-mv ./4402fJ5 ./Take-Home_CSC_Kali.ova;
-vboxmanage import Raspberry_Pi_OS.ova;
-vboxmanage import Take-Home_CSC_Challenges.ova;
-vboxmanage import Take-Home_CSC_Kali.ova;
-"
+
 
 #Cleanup downloads from internet
 sudo rm google-chrome-stable_current_amd64.deb
