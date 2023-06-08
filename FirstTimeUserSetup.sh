@@ -1,5 +1,11 @@
 #!/bin/bash
 
+IsSetup=~/.config/setupDone
+
+if [ -f "$IsSetup" ]; then
+	exit
+fi
+
 sudo
 
 echo LTC Ubuntu User Setup
@@ -158,6 +164,8 @@ if [ $varname = Y ] || [ $varname = y ]
 then
 main
 fi
+
+touch ~/.config/setupDone
 
 echo First Time Setup done!
 echo Fell free to delete the script off your desktop after this terminal window closes
