@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#Drop a script that laucnches term then runs first time setup scirpt in /etc/profile.d (Done in install script)
+#When ran drop file in /.config of user home folder
+#When about to start check for /.config file
+
 IsSetup=~/.config/setupDone
 
 if [ -f "$IsSetup" ]; then
