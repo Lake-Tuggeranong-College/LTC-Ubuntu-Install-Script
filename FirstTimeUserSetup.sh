@@ -4,7 +4,7 @@
 #When ran drop file in /.config of user home folder
 #When about to start check for /.config file
 
-IsSetup=~/.config/setupDone
+IsSetup=~/.config/setupDone 
 
 if [ -f "$IsSetup" ]; then
 	exit
@@ -25,9 +25,9 @@ main() {
 	echo Please Select One Number You Will be able to select others later
 
 
-	read varname
+	read selection
 
-	if [ $varname = 1 ]
+	if [ $selection = 1 ]
 	then
 		echo Adding Desktop Shortcuts for Game-Dev
 		#Github
@@ -60,7 +60,7 @@ main() {
 		gio set ~/Desktop/gimp.desktop metadata::trusted true
 
 	
-	elif [ $varname = 2 ]
+	elif [ $selection = 2 ]
 	then
 		echo Adding Desktop Shortcuts for Roborics
 		#Chrome
@@ -87,7 +87,7 @@ main() {
 		echo Giving User Account Access to USB/TTY Ports
 		sudo usermod -a -G dialout $USER
 	
-	elif [ $varname = 3 ]
+	elif [ $selection = 3 ]
 	then
 		echo Adding Desktop Shortcuts for Web-Dev
 		#Code
@@ -107,7 +107,7 @@ main() {
 		wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.28.1.15219.tar.gz
 		tar -xr ~/jetbrains-toolbox-1.28.1.15219.tar.gz
 		~/jetbrains-toolbox-1.28.1.15219/jetbrains-toolbox
-	elif [ $varname = 4 ]
+	elif [ $selection = 4 ]
 	then
 		echo Adding Desktop Shortcuts for Networking
 		#Putty
@@ -162,9 +162,9 @@ main
 
 echo Do you have any other classes [Y/N]
 
-read varname
+read selection
 
-if [ $varname = Y ] || [ $varname = y ]
+if [ $selection = Y ] || [ $selection = y ]
 then
 main
 fi
@@ -172,7 +172,6 @@ fi
 touch ~/.config/setupDone
 
 echo First Time Setup done!
-echo Fell free to delete the script off your desktop after this terminal window closes
 echo Press Enter to Quit
 read quit
 exit
