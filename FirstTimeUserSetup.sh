@@ -4,14 +4,6 @@
 #When ran drop file in /.config of user home folder
 #When about to start check for /.config file
 
-IsSetup=~/.config/setupDone 
-
-if [ -f "$IsSetup" ]; then
-	exit
-fi
-
-sudo
-
 echo LTC Ubuntu User Setup
 
 main() {
@@ -83,7 +75,7 @@ main() {
 		cp /var/lib/snapd/desktop/applications/code_code.desktop ~/Desktop
 		chmod +x ~/Desktop/code_code.desktop.desktop
 		gio set ~/Desktop/code_code.desktop.desktop metadata::trusted true
-		
+		promtForJetbrains
 		echo Giving User Account Access to USB/TTY Ports
 		sudo usermod -a -G dialout $USER
 	
@@ -102,11 +94,8 @@ main() {
 		cp /usr/share/applications/github-desktop.desktop ~/Desktop
 		chmod +x ~/Desktop/github-desktop.desktop
 		gio set ~/Desktop/github-desktop.desktop metadata::trusted true
-		echo Downloading Jetbrains Toolbox and Dependencies
-		sudo apt install -y libfuse2
-		wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.28.1.15219.tar.gz
-		tar -xr ~/jetbrains-toolbox-1.28.1.15219.tar.gz
-		~/jetbrains-toolbox-1.28.1.15219/jetbrains-toolbox
+		promtForJetbrains
+
 	elif [ $selection = 4 ]
 	then
 		echo Adding Desktop Shortcuts for Networking
@@ -154,6 +143,19 @@ main() {
 		echo Press Enter to Retry
 		read retry
 		main
+	fi
+}
+
+promtForJetbrains() {
+	echo Do you Require JetBrains Toolbox [Y/N]?
+	read selection
+	if [ $selection = Y ] || [ $selection = y ]
+	then
+		echo Downloading Jetbrains Toolbox and Dependencies
+		sudo apt install -y libfuse2
+		wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.28.1.15219.tar.gz
+		tar -xr ~/jetbrains-toolbox-1.28.1.15219.tar.gz
+		~/jetbrains-toolbox-1.28.1.15219/jetbrains-toolbox
 	fi
 }
 
