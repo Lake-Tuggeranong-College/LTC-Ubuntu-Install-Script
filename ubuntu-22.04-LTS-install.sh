@@ -112,9 +112,9 @@ sudo apt install nvidia-driver-525 -y
 sudo prime-select nvidia
 
 #Add First Time User Setup and make it launch on login
-wget -O FirstTimeUserSetup https://www.bit.ly/LTC-User-Setup -p /etc/profile.d/
-touch /etc/profile.d/startSetup.sh
-echo "gnome-terminal -- bash -c /"sh /etc/profile.d/FirstTimeUserSetup; exec bash"/" | sudo tee /etc/profile.d/startSetup.sh
+sudo wget -O /etc/profile.d/FirstTimeUserSetup https://www.bit.ly/LTC-User-Setup
+sudo touch /etc/profile.d/startSetup.sh
+echo "IsSetup=~/.config/setupDone; if [ ! -f \"\$IsSetup\" ]; then gnome-terminal -- bash -c \"sh /etc/profile.d/FirstTimeUserSetup; exec bash\"; fi" | sudo tee /etc/profile.d/startSetup.sh
 
 #Exit & Reboot for Nvidia Driver
 reboot
