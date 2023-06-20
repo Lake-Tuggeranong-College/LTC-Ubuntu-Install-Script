@@ -8,6 +8,20 @@
 
 #! /bin/bash
 
+#Securely erase the ohter HDDs
+sudo shred -vfz -n1 /dev/sda
+sudo shred -vfz -n1 /dev/sdb
+
+#Setup one of the HDD to use as the location of the user home folders
+sudo mkfs.ext4 /dev/sda
+sudo mkdir /mnt/homeFolders
+sdaUUID=$(sudo blkid -s UUID -o value /dev/sda1)
+echo UUID=$sdaUUID /mnt/homeFolders ext4 defaults  0  2
+
+mkdir /mnt/homeFolders/gamedev
+mkdir /mnt/homeFolders/robotics
+mkdir /mnt/homeFolders/cisco
+
 # Update and upgrade packages from apt and snap
 sudo apt update
 sudo apt upgrade -y
@@ -24,20 +38,6 @@ sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash cisco
 sudo usermod -aG sudo gamedev
 sudo usermod -aG sudo robotics
 sudo usermod -aG sudo cisco
-
-#Securely erase the ohter HDDs
-sudo shred -vfz -n1 /dev/sda
-sudo shred -vfz -n1 /dev/sdb
-
-#Setup one of the HDD to use as the location of the user home folders
-sudo mkfs.ext4 /dev/sda
-sudo mkdir /mnt/homeFolders
-sdaUUID=$(sudo blkid -s UUID -o value /dev/sda1)
-echo UUID=$sdaUUID /mnt/homeFolders ext4 defaults  0  2
-
-mkdir /mnt/homeFolders/gamedev
-mkdir /mnt/homeFolders/robotics
-mkdir /mnt/homeFolders/cisco
 
 #Change User Directory to HDD
 sudo usermod -d /mnt/homeFolders/gamedev gamedev
