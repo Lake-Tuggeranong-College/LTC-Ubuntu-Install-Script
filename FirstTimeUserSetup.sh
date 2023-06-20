@@ -73,8 +73,8 @@ main() {
 		gio set ~/Desktop/cirkit-designer_cirkit-designer.desktop metadata::trusted true
 		#Code
 		cp /var/lib/snapd/desktop/applications/code_code.desktop ~/Desktop
-		chmod +x ~/Desktop/code_code.desktop.desktop
-		gio set ~/Desktop/code_code.desktop.desktop metadata::trusted true
+		chmod +x ~/Desktop/code_code.desktop
+		gio set ~/Desktop/code_code.desktop metadata::trusted true
 		promtForJetbrains
 		echo Giving User Account Access to USB/TTY Ports
 		sudo usermod -a -G dialout $USER
@@ -84,8 +84,8 @@ main() {
 		echo Adding Desktop Shortcuts for Web-Dev
 		#Code
 		cp /var/lib/snapd/desktop/applications/code_code.desktop ~/Desktop
-		chmod +x ~/Desktop/code_code.desktop.desktop
-		gio set ~/Desktop/code_code.desktop.desktop metadata::trusted true
+		chmod +x ~/Desktop/code_code.desktop
+		gio set ~/Desktop/code_code.desktop metadata::trusted true
 		#Chrome
 		cp /usr/share/applications/google-chrome.desktop ~/Desktop
 		chmod +x ~/Desktop/google-chrome.desktop
