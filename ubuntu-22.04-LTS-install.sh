@@ -8,15 +8,12 @@
 
 #! /bin/bash
 
-#Securely erase the ohter HDDs
-sudo shred -vfz -n1 /dev/sda
-sudo shred -vfz -n1 /dev/sdb
 
 #Setup one of the HDD to use as the location of the user home folders
 sudo mkfs.ext4 /dev/sda
 sudo mkdir /mnt/homeFolders
-sdaUUID=$(sudo blkid -s UUID -o value /dev/sda1)
-echo UUID=$sdaUUID /mnt/homeFolders ext4 defaults  0  2
+sdaUUID=$(sudo blkid -s UUID -o value /dev/sda)
+echo UUID=$sdaUUID /mnt/homeFolders ext4 defaults  0  2 | sudo tee /ect/fstab
 
 mkdir /mnt/homeFolders/gamedev
 mkdir /mnt/homeFolders/robotics

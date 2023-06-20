@@ -126,16 +126,8 @@ main() {
 		#Packet Tracer
 		cp /opt/pt/packettracer ~/Desktop
 		chmod +x ~/Desktop/packettracer
-		echo Downloading and Importing VM images
-		wget https://bit.ly/41qQCZO
-		mv ./41qQCZO ./Raspberry_Pi_OS.ova
-		wget https://bit.ly/3KTbmlM
-		mv ./3KTbmlM ./Take-Home_CSC_Challenges.ova
-		wget https://bit.ly/4402fJ5
-		mv ./4402fJ5 ./Take-Home_CSC_Kali.ova
-		vboxmanage import Raspberry_Pi_OS.ova
-		vboxmanage import Take-Home_CSC_Challenges.ova
-		vboxmanage import Take-Home_CSC_Kali.ova
+		gio set ~/Desktop/packettracer metadata::trusted true
+		promtForVMs
 	else
 	
 		echo
@@ -153,7 +145,7 @@ promtForJetbrains() {
 	then
 		echo Downloading Jetbrains Toolbox and Dependencies
 		sudo apt install -y libfuse2
-		wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.28.1.15219.tar.gz
+		wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.28.1.15219.tar.gz -P ~/
 		tar -xr ~/jetbrains-toolbox-1.28.1.15219.tar.gz
 		echo Running Jet Brains Installer
 		echo It might take a while for it to show up
@@ -161,6 +153,25 @@ promtForJetbrains() {
 		~/jetbrains-toolbox-1.28.1.15219/jetbrains-toolbox
 		read quit
 	fi
+}
+
+promtForVMs() {
+	echo Do you Require the VMs? [Y/N]?
+	read selection
+	if [ $selection = Y ] || [ $selection = y ]
+	then
+		echo Downloading and Importing VM images
+		wget https://bit.ly/41qQCZO
+		mv ./41qQCZO ./Raspberry_Pi_OS.ova
+		wget https://bit.ly/3KTbmlM
+		mv ./3KTbmlM ./Take-Home_CSC_Challenges.ova
+		wget https://bit.ly/4402fJ5
+		mv ./4402fJ5 ./Take-Home_CSC_Kali.ova
+		vboxmanage import Raspberry_Pi_OS.ova
+		vboxmanage import Take-Home_CSC_Challenges.ova
+		vboxmanage import Take-Home_CSC_Kali.ova
+	fi
+
 }
 
 main
