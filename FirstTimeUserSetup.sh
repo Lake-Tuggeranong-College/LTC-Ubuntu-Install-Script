@@ -158,8 +158,8 @@ promtForJetbrains() {
 		echo Running Jet Brains Installer
 		echo It might take a while for it to show up
 		echo Press Enter After You Have Finished Installing JetBrains!
-		read quit
 		~/jetbrains-toolbox-1.28.1.15219/jetbrains-toolbox
+		read quit
 	fi
 }
 
