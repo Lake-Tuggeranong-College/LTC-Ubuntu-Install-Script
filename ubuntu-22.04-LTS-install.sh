@@ -15,10 +15,6 @@ sudo mkdir /mnt/homeFolders
 sdaUUID=$(sudo blkid -s UUID -o value /dev/sda)
 echo UUID=$sdaUUID /mnt/homeFolders ext4 defaults  0  2 | sudo tee -a /etc/fstab
 
-mkdir /mnt/homeFolders/gamedev
-mkdir /mnt/homeFolders/robotics
-mkdir /mnt/homeFolders/cisco
-
 # Update and upgrade packages from apt and snap
 sudo apt update
 sudo apt upgrade -y
@@ -27,19 +23,14 @@ sudo snap refresh
 sudo apt --fix-missing -y update
 
 #Add Users
-sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash gamedev
-sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash robotics
-sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash cisco
+sudo useradd -md /mnt/homeFolders/gamedev  -p $(openssl passwd -1 student) -s /bin/bash gamedev
+sudo useradd -md /mnt/homeFolders/robotics -p $(openssl passwd -1 student) -s /bin/bash robotics
+sudo useradd -md /mnt/homeFolders/cisco -p $(openssl passwd -1 student) -s /bin/bash cisco
 
 #Put all users into sudo group
 sudo usermod -aG sudo gamedev
 sudo usermod -aG sudo robotics
 sudo usermod -aG sudo cisco
-
-#Change User Directory to HDD
-sudo usermod -d /mnt/homeFolders/gamedev gamedev
-sudo usermod -d /mnt/homeFolders/robotics robotics
-sudo usermod -d /mnt/homeFolders/cisco cisco
 
 #Grant Robo account perms to USB/TTY ports
 sudo usermod -a -G dialout robotics
