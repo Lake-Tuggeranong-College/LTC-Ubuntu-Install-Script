@@ -13,7 +13,7 @@
 sudo mkfs.ext4 /dev/sda
 sudo mkdir /mnt/homeFolders
 sdaUUID=$(sudo blkid -s UUID -o value /dev/sda)
-echo UUID=$sdaUUID /mnt/homeFolders ext4 defaults  0  2 | sudo tee /etc/fstab
+echo UUID=$sdaUUID /mnt/homeFolders ext4 defaults  0  2 | sudo tee -a /etc/fstab
 
 mkdir /mnt/homeFolders/gamedev
 mkdir /mnt/homeFolders/robotics
