@@ -146,7 +146,7 @@ promtForJetbrains() {
 		echo Downloading Jetbrains Toolbox and Dependencies
 		sudo apt install -y libfuse2
 		wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.28.1.15219.tar.gz -P ~/
-		tar -xr ~/jetbrains-toolbox-1.28.1.15219.tar.gz
+		tar -xf ~/jetbrains-toolbox-1.28.1.15219.tar.gz
 		echo Running Jet Brains Installer
 		echo It might take a while for it to show up
 		echo Press Enter After You Have Finished Installing JetBrains!
