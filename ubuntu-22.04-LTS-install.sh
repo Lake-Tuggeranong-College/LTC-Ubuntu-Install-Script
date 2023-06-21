@@ -113,5 +113,8 @@ sudo wget -O /etc/profile.d/FirstTimeUserSetup https://www.bit.ly/LTC-User-Setup
 sudo touch /etc/profile.d/startSetup.sh
 echo "IsSetup=~/.config/setupDone; if [ ! -f \"\$IsSetup\" ]; then gnome-terminal -- bash -c \"sh /etc/profile.d/FirstTimeUserSetup; exec bash\"; fi" | sudo tee /etc/profile.d/startSetup.sh
 
+#Drop Post Install File (Need to find out where cus i forgo :skull:)
+sudo /var/local/postInstallRan
+
 #Exit & Reboot for Nvidia Driver
 reboot
