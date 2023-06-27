@@ -104,7 +104,7 @@ sudo wget -O /etc/profile.d/FirstTimeUserSetup https://www.bit.ly/LTC-User-Setup
 sudo touch /etc/profile.d/startSetup.sh
 echo "IsSetup=~/.config/setupDone; if [ ! -f \"\$IsSetup\" ]; then gnome-terminal -- bash -c \"sh /etc/profile.d/FirstTimeUserSetup; exec bash\"; fi" | sudo tee /etc/profile.d/startSetup.sh
 
-#Deletes PostInstall Download and Launcher
+#Deletes PostInstall Downloader and Launcher
 sudo rm /etc/profile.d/PostInstall.sh
 
 #Exit & Reboot for Nvidia Driver

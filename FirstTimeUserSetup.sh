@@ -14,7 +14,7 @@ main() {
 	echo 3. Web-Dev
 	echo 4. Networking
 	echo
-	echo Please Select One Number You Will be able to select others later
+	echo Please Select One Number, You Will be able to select another class later
 
 
 	read selection
@@ -75,9 +75,12 @@ main() {
 		cp /var/lib/snapd/desktop/applications/code_code.desktop ~/Desktop
 		chmod +x ~/Desktop/code_code.desktop
 		gio set ~/Desktop/code_code.desktop metadata::trusted true
-		promtForJetbrains
+		
 		echo Giving User Account Access to USB/TTY Ports
 		sudo usermod -a -G dialout $USER
+
+		promtForJetbrains
+
 	
 	elif [ $selection = 3 ]
 	then
@@ -94,6 +97,7 @@ main() {
 		cp /usr/share/applications/github-desktop.desktop ~/Desktop
 		chmod +x ~/Desktop/github-desktop.desktop
 		gio set ~/Desktop/github-desktop.desktop metadata::trusted true
+		
 		promtForJetbrains
 
 	elif [ $selection = 4 ]
@@ -127,11 +131,12 @@ main() {
 		cp /opt/pt/packettracer ~/Desktop
 		chmod +x ~/Desktop/packettracer
 		gio set ~/Desktop/packettracer metadata::trusted true
+		
 		promtForVMs
 	else
 	
 		echo
-		echo Could Not Reconize Command. Please try again
+		echo Could Not Reconize Command.
 		echo Press Enter to Retry
 		read retry
 		main
