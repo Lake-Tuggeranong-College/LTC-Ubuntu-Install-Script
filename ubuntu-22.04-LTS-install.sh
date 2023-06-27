@@ -32,9 +32,7 @@ sudo usermod -aG sudo gamedev
 sudo usermod -aG sudo robotics
 sudo usermod -aG sudo cisco
 
-#Grant Robo account perms to USB/TTY ports
-sudo usermod -a -G dialout robotics
- 
+
 #Install Various Apps
 sudo add-apt-repository -y ppa:gns3/ppa
 sudo apt install -y net-tools
