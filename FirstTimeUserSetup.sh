@@ -156,20 +156,33 @@ promtForJetbrains() {
 }
 
 promtForVMs() {
-	echo Do you Require the VMs? [Y/N]?
+	echo Do you Require the Raspberry Pi VM? [Y/N]?
 	read selection
 	if [ $selection = Y ] || [ $selection = y ]
 	then
-		echo Downloading and Importing VM images
+		echo Downloading and Importing Raspberry Pi VM image
 		wget https://bit.ly/41qQCZO
 		mv ./41qQCZO ./Raspberry_Pi_OS.ova
+		vboxmanage import Raspberry_Pi_OS.ova
+	fi
+	echo Do you Require the Take Home CSC VMs? [Y/N]?
+	read selection
+	if [ $selection = Y ] || [ $selection = y ]
+	then
+		echo Downloading and Importing Take Home CSC VM images
 		wget https://bit.ly/3KTbmlM
 		mv ./3KTbmlM ./Take-Home_CSC_Challenges.ova
 		wget https://bit.ly/4402fJ5
 		mv ./4402fJ5 ./Take-Home_CSC_Kali.ova
-		vboxmanage import Raspberry_Pi_OS.ova
 		vboxmanage import Take-Home_CSC_Challenges.ova
 		vboxmanage import Take-Home_CSC_Kali.ova
+	fi
+	echo Do you Require the Windows Server and Windows 11 VMs?? [Y/N]?
+	read selection
+	if [ $selection = Y ] || [ $selection = y ]
+	then
+		echo Downloading and Importing Windows VM images
+		#TODO: DOWNLOAD AND IMPORT
 	fi
 
 }
