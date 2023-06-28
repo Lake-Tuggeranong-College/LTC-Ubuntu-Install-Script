@@ -18,6 +18,8 @@ echo UUID=$sdaUUID /mnt/homeFolders ext4 defaults  0  2 | sudo tee -a /etc/fstab
 #Mount Drive Temporary in order to make home folders
 sudo mount /dev/sda /mnt/homeFolders
 
+ln -s /home /mnt/homeFolders
+
 #Add Users
 sudo useradd -p $(openssl passwd -1 student) -s /bin/bash gamedev
 sudo useradd -p $(openssl passwd -1 student) -s /bin/bash robotics
