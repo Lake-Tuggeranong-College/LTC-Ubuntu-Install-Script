@@ -15,6 +15,20 @@ sudo mkdir /mnt/homeFolders
 sdaUUID=$(sudo blkid -s UUID -o value /dev/sda)
 echo UUID=$sdaUUID /mnt/homeFolders ext4 defaults  0  2 | sudo tee -a /etc/fstab
 
+#Mount Drive Temporary in order to make home folders
+sudo mount /dev/sda /mnt/homeFolders
+
+#Add Users
+sudo useradd -m -d /mnt/homeFolders/gamedev  -p $(openssl passwd -1 student) -s /bin/bash gamedev
+sudo useradd -m -d /mnt/homeFolders/robotics -p $(openssl passwd -1 student) -s /bin/bash robotics
+sudo useradd -m -d /mnt/homeFolders/cisco -p $(openssl passwd -1 student) -s /bin/bash cisco
+
+#Put all users into sudo group
+sudo usermod -aG sudo gamedev
+sudo usermod -aG sudo robotics
+sudo usermod -aG sudo cisco
+
+
 # Update and upgrade packages from apt and snap
 sudo apt update
 sudo apt upgrade -y
@@ -22,15 +36,6 @@ sudo apt autoremove -y
 sudo snap refresh
 sudo apt --fix-missing -y update
 
-#Add Users
-sudo useradd -md /mnt/homeFolders/gamedev  -p $(openssl passwd -1 student) -s /bin/bash gamedev
-sudo useradd -md /mnt/homeFolders/robotics -p $(openssl passwd -1 student) -s /bin/bash robotics
-sudo useradd -md /mnt/homeFolders/cisco -p $(openssl passwd -1 student) -s /bin/bash cisco
-
-#Put all users into sudo group
-sudo usermod -aG sudo gamedev
-sudo usermod -aG sudo robotics
-sudo usermod -aG sudo cisco
 
 
 #Install Various Apps
