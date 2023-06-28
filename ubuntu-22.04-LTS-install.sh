@@ -19,9 +19,9 @@ echo UUID=$sdaUUID /mnt/homeFolders ext4 defaults  0  2 | sudo tee -a /etc/fstab
 sudo mount /dev/sda /mnt/homeFolders
 
 #Add Users
-sudo useradd -m -d /mnt/homeFolders/gamedev  -p $(openssl passwd -1 student) -s /bin/bash gamedev
-sudo useradd -m -d /mnt/homeFolders/robotics -p $(openssl passwd -1 student) -s /bin/bash robotics
-sudo useradd -m -d /mnt/homeFolders/cisco -p $(openssl passwd -1 student) -s /bin/bash cisco
+sudo useradd -p $(openssl passwd -1 student) -s /bin/bash gamedev
+sudo useradd -p $(openssl passwd -1 student) -s /bin/bash robotics
+sudo useradd -p $(openssl passwd -1 student) -s /bin/bash cisco
 
 #Put all users into sudo group
 sudo usermod -aG sudo gamedev
