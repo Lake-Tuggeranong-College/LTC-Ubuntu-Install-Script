@@ -6,10 +6,7 @@
 
 echo LTC Ubuntu User Setup
 
-echo Moving Home Folder to HDD
-mkdir /mnt/homeFolders/$USER
-mkdir /mnt/homeFolders/$USER/Desktop
-usermod -d /mnt/homeFolders/$USER
+
 
 main() {
 	echo 
