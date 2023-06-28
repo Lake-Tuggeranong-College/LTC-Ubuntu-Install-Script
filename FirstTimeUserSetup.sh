@@ -59,7 +59,7 @@ main() {
 	
 	elif [ $selection = 2 ]
 	then
-		echo Adding Desktop Shortcuts for Roborics
+		echo Adding Desktop Shortcuts for Robotics
 		#Chrome
 		cp /usr/share/applications/google-chrome.desktop ~/Desktop
 		chmod +x ~/Desktop/google-chrome.desktop
