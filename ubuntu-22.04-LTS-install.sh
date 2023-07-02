@@ -13,14 +13,12 @@
 sudo mkfs.ext4 /dev/sda
 sudo mkdir /mnt/homeFolders
 sdaUUID=$(sudo blkid -s UUID -o value /dev/sda)
-echo UUID=$sdaUUID /mnt/homeFolders ext4 defaults  0  2 | sudo tee -a /etc/fstab
+echo UUID=$sdaUUID /home ext4 defaults  0  2 | sudo tee -a /etc/fstab
 
-#Mount Drive Temporary in order to make home folders
-sudo mount /dev/sda /mnt/homeFolders
 
-#Change Home Folder to a Symbolic link to the root of the HDD
+#Mount drive so we can use homefolders
+sudo mount /dev/sda /home
 sudo mv /home /oldHome
-sudo ln -s /mnt/homeFolders /home
 sudo mv /oldHome/tigerteam /home
 
 #Add Users
