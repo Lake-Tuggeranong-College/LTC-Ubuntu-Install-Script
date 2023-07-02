@@ -18,12 +18,15 @@ echo UUID=$sdaUUID /mnt/homeFolders ext4 defaults  0  2 | sudo tee -a /etc/fstab
 #Mount Drive Temporary in order to make home folders
 sudo mount /dev/sda /mnt/homeFolders
 
-ln -s /home /mnt/homeFolders
+#Change Home Folder to a Symbolic link to the root of the HDD
+sudo mv /home /oldHome
+sudo ln -s /mnt/homeFolders /home
+sudo mv /oldHome/tigerteam /home
 
 #Add Users
-sudo useradd -p $(openssl passwd -1 student) -s /bin/bash gamedev
-sudo useradd -p $(openssl passwd -1 student) -s /bin/bash robotics
-sudo useradd -p $(openssl passwd -1 student) -s /bin/bash cisco
+sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash gamedev
+sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash robotics
+sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash cisco
 
 #Put all users into sudo group
 sudo usermod -aG sudo gamedev
