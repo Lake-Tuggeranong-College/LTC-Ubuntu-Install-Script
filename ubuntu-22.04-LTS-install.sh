@@ -27,11 +27,13 @@ sudo mv /oldHome/tigerteam /home
 sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash gamedev
 sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash robotics
 sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash cisco
+sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash webdev
 
 #Put all users into sudo group
 sudo usermod -aG sudo gamedev
 sudo usermod -aG sudo robotics
 sudo usermod -aG sudo cisco
+sudo usermod -aG sudo webdev
 
 
 # Update and upgrade packages from apt and snap
