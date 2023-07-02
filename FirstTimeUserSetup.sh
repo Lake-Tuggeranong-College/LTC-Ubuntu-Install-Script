@@ -42,8 +42,8 @@ main() {
 		gio set ~/Desktop/gd-godot-engine-snapcraft_gd-godot-engine-snapcraft.desktop metadata::trusted true
 		#Code
 		cp /var/lib/snapd/desktop/applications/code_code.desktop ~/Desktop
-		chmod +x ~/Desktop/code_code.desktop.desktop
-		gio set ~/Desktop/code_code.desktop.desktop metadata::trusted true
+		chmod +x ~/Desktop/code_code.desktop
+		gio set ~/Desktop/code_code.desktop metadata::trusted true
 		#Kirta
 		cp /var/lib/snapd/desktop/applications/krita_krita.desktop ~/Desktop
 		chmod +x ~/Desktop/krita_krita.desktop
