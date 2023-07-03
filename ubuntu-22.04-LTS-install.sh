@@ -18,6 +18,7 @@ echo UUID=$sdaUUID /home ext4 defaults  0  2 | sudo tee -a /etc/fstab
 
 #Mount drive so we can use homefolders
 sudo mv /home /oldHome
+sudo mkdir /home
 sudo mount /dev/sda /home
 sudo mv /oldHome/tigerteam /home
 
