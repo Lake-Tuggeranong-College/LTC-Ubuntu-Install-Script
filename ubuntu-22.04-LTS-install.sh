@@ -65,36 +65,36 @@ sudo snap install arduino
 sudo snap install krita
  
 #Get and install VMware VIX (Needed to use GNS3)
-sudo wget https://download3.vmware.com/software/player/file/VMware-VIX-1.17.0-6661328.x86_64.bundle
-sudo chmod a+x VMware-VIX-1.17.0-6661328.x86_64.bundle
-sudo ./VMware-VIX-1.17.0-6661328.x86_64.bundle
+sudo wget https://download3.vmware.com/software/player/file/VMware-VIX-1.17.0-6661328.x86_64.bundle -P /tmp
+sudo chmod a+x /tmp/VMware-VIX-1.17.0-6661328.x86_64.bundle
+sudo /tmp/VMware-VIX-1.17.0-6661328.x86_64.bundle
  
 #Download & Install Chrome from the internet
-sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
-sudo dpkg -i google-chrome-stable_current_amd64.deb 
+sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /tmp
+sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb 
  
 #Download & Install Github Desktop from the internet
-sudo wget https://github.com/shiftkey/desktop/releases/download/release-3.2.0-linux1/GitHubDesktop-linux-3.2.0-linux1.deb 
-sudo apt install ./GitHubDesktop-linux-3.2.0-linux1.deb 
+sudo wget https://github.com/shiftkey/desktop/releases/download/release-3.2.0-linux1/GitHubDesktop-linux-3.2.0-linux1.deb -P /tmp
+sudo apt install /tmp/GitHubDesktop-linux-3.2.0-linux1.deb 
  
 #Download Packet Tracer
-sudo wget https://bit.ly/3zNcdQ5
+sudo wget https://bit.ly/3zNcdQ5 -P /tmp
 #Add .deb to the end of install file
-sudo mv ./3zNcdQ5 ./3zNcdQ5.deb
+sudo mv /tmp/3zNcdQ5 /tmp/3zNcdQ5.deb
 #Install Packet Tracer
-sudo apt install -y ./3zNcdQ5.deb
+sudo apt install -y /tmp/3zNcdQ5.deb
  
 #Download & Install VNC Viewer
-sudo wget https://downloads.realvnc.com/download/file/viewer.files/VNC-Viewer-7.1.0-Linux-x64.deb
-sudo apt install -y ./VNC-Viewer-7.1.0-Linux-x64.deb
+sudo wget https://downloads.realvnc.com/download/file/viewer.files/VNC-Viewer-7.1.0-Linux-x64.deb -P /tmp
+sudo apt install -y /tmp/VNC-Viewer-7.1.0-Linux-x64.deb
 
 
 
 #Cleanup downloads from internet
-sudo rm google-chrome-stable_current_amd64.deb
-sudo rm 3zNcdQ5.deb
-sudo rm GitHubDesktop-linux-3.2.0-linux1.deb 
-sudo rm VMware-VIX-1.17.0-6661328.x86_64.bundle
+sudo rm /tmp/google-chrome-stable_current_amd64.deb
+sudo rm /tmp/3zNcdQ5.deb
+sudo rm /tmp/GitHubDesktop-linux-3.2.0-linux1.deb 
+sudo rm /tmp/VMware-VIX-1.17.0-6661328.x86_64.bundle
 
 #Check all packages again
 sudo apt update -y
