@@ -212,7 +212,7 @@ fi
 touch ~/.config/setupDone
 
 echo First Time Setup done!
-echo A reboot will happen
+echo A reboot is needed to make sure everything gets updated
 echo Press enter to Reboot
 read quit
 reboot
