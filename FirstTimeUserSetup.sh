@@ -181,6 +181,12 @@ promtForVMs() {
 		vboxmanage import Take-Home_CSC_Kali.ova
 		echo Downloading and Importing Windows VM images
 		#TODO: DOWNLOAD AND IMPORT
+
+
+		echo Removing temporary files
+		rm ./Raspberry_Pi_OS.ova
+		rm ./Take-Home_CSC_Challenges.ova
+		rm ./Take-Home_CSC_Kali.ova
 	fi
 
 }
