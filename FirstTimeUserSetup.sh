@@ -181,13 +181,18 @@ promtForVMs() {
 		vboxmanage import Take-Home_CSC_Challenges.ova
 		vboxmanage import Take-Home_CSC_Kali.ova
 		echo Downloading and Importing Windows VM images
-		#TODO: DOWNLOAD AND IMPORT
-
-
+		wget https://bit.ly/LTCWindows11VM
+		wget https://bit.ly/LTCWindowsServerVM
+		mv ./LTCWindows11VM ./LTCWindows11VM.ova 
+		mv ./LTCWindowsServerVM ./LTCWindowsServerVM.ova
+		vboxmanage import ./LTCWindows11VM.ova 
+		vboxmanage import ./LTCWindowsServerVM.ova
 		echo Removing temporary files
 		rm ./Raspberry_Pi_OS.ova
 		rm ./Take-Home_CSC_Challenges.ova
 		rm ./Take-Home_CSC_Kali.ova
+		rm ./LTCWindowsServerVM.ova
+		rm ./LTCWindows11VM.ova
 	fi
 
 }
