@@ -200,6 +200,8 @@ fi
 touch ~/.config/setupDone
 
 echo First Time Setup done!
-echo Press Enter to Quit
+echo A reboot will happen
+echo Press enter to Reboot
 read quit
-exit
+reboot
+
