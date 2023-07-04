@@ -133,7 +133,8 @@ main() {
 		cp /opt/pt/packettracer ~/Desktop
 		chmod +x ~/Desktop/packettracer
 		gio set ~/Desktop/packettracer metadata::trusted true
-		
+		echo Giving you perms to use wireshark
+		sudo usermod -a -G wireshark $USER
 		promtForVMs
 	else
 	
