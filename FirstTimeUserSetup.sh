@@ -130,10 +130,11 @@ main() {
 		chmod +x ~/Desktop/realvnc-vncviewer.desktop
 		gio set ~/Desktop/realvnc-vncviewer.desktop metadata::trusted true
 		#Packet Tracer
-		cp /opt/pt/packettracer ~/Desktop
-		chmod +x ~/Desktop/packettracer
-		gio set ~/Desktop/packettracer metadata::trusted true
-		echo Giving you perms to use wireshark
+		echo Downloading Packet Tracer Desktop Shortcut
+		wget https://www.bit.ly/CiscoPTShortcut -P ~/Desktop
+		chmod +x ~/Packet-Tracer-8.2.1.desktop
+		gio set ~/Packet-Tracer-8.2.1.desktop metadata::trusted true
+		
 		sudo usermod -a -G wireshark $USER
 		promtForVMs
 	else
