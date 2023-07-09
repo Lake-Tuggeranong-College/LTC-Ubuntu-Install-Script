@@ -10,11 +10,16 @@
 
 
 #Setup one of the HDD to use as the location of the user home folders
+echo Do you need multi drive setup?
+read selection
+
+if [ $selection = Y ] || [ $selection = y ]
+then
 sudo mkfs.ext4 /dev/sda
 sudo mkdir /mnt/homeFolders
 sdaUUID=$(sudo blkid -s UUID -o value /dev/sda)
 echo UUID=$sdaUUID /home ext4 defaults  0  2 | sudo tee -a /etc/fstab
-
+fi
 
 #Mount drive so we can use homefolders
 sudo mv /home /oldHome
