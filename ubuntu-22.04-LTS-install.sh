@@ -19,13 +19,13 @@ sudo mkfs.ext4 /dev/sda
 sudo mkdir /mnt/homeFolders
 sdaUUID=$(sudo blkid -s UUID -o value /dev/sda)
 echo UUID=$sdaUUID /home ext4 defaults  0  2 | sudo tee -a /etc/fstab
-fi
 
 #Mount drive so we can use homefolders
 sudo mv /home /oldHome
 sudo mkdir /home
 sudo mount /dev/sda /home
 sudo mv /oldHome/tigerteam /home
+fi
 
 #Add Users
 sudo useradd -m -p $(openssl passwd -1 student) -s /bin/bash gamedev
