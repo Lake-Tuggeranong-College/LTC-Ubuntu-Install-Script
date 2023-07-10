@@ -131,7 +131,7 @@ main() {
 		gio set ~/Desktop/realvnc-vncviewer.desktop metadata::trusted true
 		#Packet Tracer
 		echo Downloading Packet Tracer Desktop Shortcut
-		wget https://www.bit.ly/CiscoPTShortcut -P ~/Desktop
+		wget https://www.bit.ly/CiscoPTShortcut -O ~/Desktop/Packet-Tracer.desktop
 		chmod +x ~/Desktop/Packet-Tracer.desktop
 		gio set ~/Desktop/Packet-Tracer.desktop metadata::trusted true
 		
