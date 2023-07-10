@@ -132,8 +132,8 @@ main() {
 		#Packet Tracer
 		echo Downloading Packet Tracer Desktop Shortcut
 		wget https://www.bit.ly/CiscoPTShortcut -P ~/Desktop
-		chmod +x ~/Packet-Tracer.desktop
-		gio set ~/Packet-Tracer.desktop metadata::trusted true
+		chmod +x ~/Desktop/Packet-Tracer.desktop
+		gio set ~/Desktop/Packet-Tracer.desktop metadata::trusted true
 		
 		sudo usermod -a -G wireshark $USER
 		promtForVMs
