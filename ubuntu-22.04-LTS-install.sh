@@ -62,6 +62,8 @@ sudo apt install -y ostinato
 sudo apt install -y virtualbox
 sudo apt install -y nmap
 sudo apt install -y gns3-gui gns3-server
+sudo apt install -y php
+sudo apt install -y php-cgi
 sudo snap install gd-godot-engine-snapcraft
 sudo snap install cirkit-designer
 sudo snap install code --classic
